@@ -30,13 +30,13 @@ var shinobi = {
 };
 
 var majSpriteMouv = function(){
-   shinobi.curFrame = ++shinobi.curFrame % shinobi.frameCount;
-   shinobi.srcY = (shinobi.curFrame + 1) * height;
+ shinobi.curFrame = ++shinobi.curFrame % shinobi.frameCount;
+ shinobi.srcY = (shinobi.curFrame + 1) * height;
 }
 
 var majSpriteAttaque = function(){
- shinobi.curFrame = ++shinobi.curFrame % shinobi.frameCount;
- shinobi.srcY = shinobi.curFrame * height;
+   shinobi.curFrame = ++shinobi.curFrame % shinobi.frameCount;
+   shinobi.srcY = shinobi.curFrame * height;
 
 }
 
@@ -65,8 +65,8 @@ function majFrameMouv (){
     } 
 };
 function majFrameSautUp(){
- shinobi.curFrame = ++shinobi.curFrame % shinobi.frameCount;
- shinobi.srcY = shinobi.curFrame * height;
+   shinobi.curFrame = ++shinobi.curFrame % shinobi.frameCount;
+   shinobi.srcY = shinobi.curFrame * height;
     if (shinobi.left) { // Si le personnage regarde à gauche... //
         shinobi.srcX = 2400;
 
@@ -115,8 +115,6 @@ var ConstructeurEnnemiDroite = function(ArguNom){
     this.left = false;
     this.right = true;
     this.up = true;
-    this.collisionMouv = false;
-    this.collisionFight = false;
     this.rows = 7;
     this.cols = 6;
     this.curFrame = 0;
@@ -124,10 +122,8 @@ var ConstructeurEnnemiDroite = function(ArguNom){
     this.spriteEnnemiW = 2000;
     this.spriteEnnemiH = 2800;
     this.mouvSprite = function(){
-        if (this.collisionMouv == true) {
-            this.curFrame = ++this.curFrame % this.frameCount;
-            this.srcY = (this.curFrame + 1) * heightE;
-        }
+       this.curFrame = ++this.curFrame % this.frameCount;
+       this.srcY = (this.curFrame + 1) * heightE;
         if (this.left) { // Si le personnage court vers la gauche //
             this.x += this.speed; // j'enlève 3 pixels à sa position horizontale //
         }
@@ -137,10 +133,8 @@ var ConstructeurEnnemiDroite = function(ArguNom){
     },
 
     this.spriteAttaqueEnnemi = function(){
-        if (this.collisionFight == true) {
-
-         this.curFrame = ++this.curFrame % this.frameCount;
-         this.srcY = (this.curFrame) * heightE;
+     this.curFrame = ++this.curFrame % this.frameCount;
+     this.srcY = (this.curFrame) * heightE;
 
          if (this.left) { // Si le personnage regarde à gauche... //
             this.srcX = 800;
@@ -148,10 +142,8 @@ var ConstructeurEnnemiDroite = function(ArguNom){
         if (this.right) { // Si le personnage regarde à droite //
             this.srcX = 1200;
         }
+        
     }
-    
-
-}
 
 
 };
@@ -163,29 +155,20 @@ var ConstructeurEnnemiDroite = function(ArguNom){
 var ennemi1 = new ConstructeurEnnemiDroite('shreder');
 var widthE = ennemi1.spriteEnnemiW/ennemi1.cols
 var heightE = ennemi1.spriteEnnemiH/ennemi1.rows
-console.log(ennemi1.collisionFight)
-
-
 
 var collision = function(){
 
-    if (ennemi1.x < shinobi.x + 50) {
+    if (ennemi1.x - 150 <= shinobi.x) {
         ennemi1.right = false;
-        ennemi1.collisionMouv = false;
-        ennemi1.collisionFight = true;
-        ennemi1.srcY = 0;
-
         shinobi.x = shinobi.x  - 100;
         shinobi.srcY = 400;
         shinobi.srcX = 1600;
-
-        console.log(ennemi1.collisionMouv)
+        ennemi1.attaque = true;
+        console.log(ennemi1.attaque)
 
     } 
+
 }
-
-
-
 
 
 
@@ -239,7 +222,7 @@ var time = function(timestamp){
 
 
 
-    if (!startEnnemiToucher && ennemi1.collisionFight) {
+    if (!startEnnemiToucher && ennemi1.attaque) {
         startEnnemiToucher = timestamp;
     }
     progressEnnemiToucher = timestamp - startEnnemiToucher;
@@ -261,7 +244,6 @@ var time = function(timestamp){
       ennemi1.mouvSprite();
       majFrameMouv();
       collision();
-
 
 
 
