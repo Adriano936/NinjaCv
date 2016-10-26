@@ -247,6 +247,12 @@ hr.star-light
   position: absolute;
   bottom: 40px;
 }
+.courbe
+{
+height: 58px;
+width: 100%;
+position: absolute;
+}
 .logoScroll
 {
   height: 100%;
@@ -306,7 +312,6 @@ hr.star-light
 }
 .voletslogo
 {
-  background: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
   padding:10px;
@@ -391,6 +396,44 @@ hr.star-light
   position: absolute;
   position: fixed;
 }
+/*Formulaire de contact*/
+
+.contactForm
+{
+
+  height: 100%;
+  width: 100%;
+  color:white;
+  font-family: 'Candal', sans-serif;
+}
+.form-control
+{
+  color: #FF2C3D;
+}
+
+.form-control:focus {
+    border-color: #66afe9;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255, 44, 61, 0.6);
+    outline: 0 none;
+}
+
+.buttonSubmit
+{
+  background:url('images/logoSubmit.png') no-repeat;
+  height: 60px;
+  width: 60px;
+}
+.buttonSubmit:hover
+{
+background:url('images/logoSubmitHover.png') no-repeat;
+  height: 60px;
+  width: 60px;
+}
+input[type="submit"]
+{
+   border: none;
+}
+
 /* Jeu */
 #conteneurJeu
 {
@@ -402,7 +445,7 @@ hr.star-light
   overflow: hidden;
   position: relative;
 }
-canvas {
+#canvas {
   position: absolute;
   margin:auto;
   padding: auto;
@@ -410,7 +453,6 @@ canvas {
   left: 0px; 
   margin-bottom: 0px; 
   top: -88px;
-  display: none;
 }
 .titreNinjaCv
 {

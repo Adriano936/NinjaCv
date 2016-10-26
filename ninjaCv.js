@@ -394,7 +394,6 @@ window.onkeydown = function(event){
             break;
             case 65: // touche a        
             shinobi.attaque = true;
-            sonsSabre();
             evolBarreAttaque();
             break;
             case 90: // touche z
@@ -431,16 +430,12 @@ window.onkeydown = function(event){
 
 //******************************************Habillage*****************************************************
 // sons 
+var sonsLancer = false;
 function sonsAmbiance(){
   var sourceUrlSonsJeu = 'audio/sonsJeu.mp3';
   $('#sons').attr('src',sourceUrlSonsJeu);
   $('#sons').attr('autoplay',true);
   $('#sons').attr('loop',true);
-}
-function sonsSabre (){
- var sourceUrlSonsSabre = 'audio/sabre.wav';
- $('#coup').attr('src',sourceUrlSonsSabre);
- $('#coup').attr('autoplay',true);
 }
 function sonsSabreEnnemis (){
  var sourceUrlSonsSabreEnnemis = 'audio/sabre.wav';
@@ -483,10 +478,11 @@ $('.imgLogoJoueyl').click(function(){
   monTableauEnnemis[i].collisionFight = false;
   monTableauEnnemis[i].collisionMouv = false;
   logoCompX = 510;
-  $('canvas').show();
+  $('#canvas').show();
   $('.logoVie').show();
   lancement();
   sonsAmbiance();
+  sonsLancer = false;
 })
 //Perdu
 function youlose(){

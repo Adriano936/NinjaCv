@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Adrien Leteinturier, Développeur Javascript Fullstack</title>
-	<meta name="Description" content="">
-	<meta name="Keywords" content="">
+	<meta name="Description" content="Développeur Web Fullstack Javascript">
+	<meta name="Keywords" content="Html/Css,Javascript,Jquery,Bootstrap,Angular-Js,Mongo-Db,Node-Js,Express-Js,Ajax,Meteor-Js,ifocop,Paris,digital,FrontEnd,BackEnd">
 	<meta name="Robots" content="all">
 	<meta name=viewport content="width=device-width, initial-scale=1">
 	<!--[if lt IE 9]>
@@ -27,7 +27,6 @@
 	</nav>
 	<nav class="navbar navbar-inverse navbar-fixed-top " role="navigation">
 		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 					<span class="sr-only">Toggle navigation</span>
@@ -38,7 +37,6 @@
 				<a class="navbar-brand" href="#">
 				</a>
 			</div>
-			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li>
@@ -167,6 +165,9 @@
 	<div id="ancre3" class="slide3">
 		<div id="conteneurJeu" class="text-center hidden-sm hidden-xs slide_inside3">
 			<div class="row">
+				<div id="lesInstructions">
+					<div class="instructions"><img class="imgInstructions" src="sprite/instructionsJeu.jpg" alt="instructions de jeu"></div>
+				</div>
 				<div class="col-md-12 col-lg-12 ninjaCv">
 					<canvas id="canvas">Votre navigateur ne supporte pas HTML5, veuillez le mettre à jour pour jouer.</canvas>
 					<div class="logoVie">
@@ -180,9 +181,6 @@
 					<audio id="coup"></audio>
 					<audio id="coupEnnemi"></audio>
 					<audio id="impact"></audio>
-				</div>
-				<div id="lesInstructions">
-					<div class="instructions"><img class="imgInstructions" src="sprite/instructionsJeu.jpg" alt="instructions de jeu"></div>
 				</div>
 				<div class="youwin">
 					<img class="imgyl1" src="sprite/tuas.png" alt="txtyl">
@@ -300,35 +298,27 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-				<div class="fb-page" data-href="https://www.facebook.com/dreamgraphisme/" data-tabs="timeline" data-height="550" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/dreamgraphisme/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/dreamgraphisme/">Dreamgraphisme</a></blockquote></div>
+			<!-- Angular formulaire de contact -->
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<div class="ngForm"></div>
 			</div>
-			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-				<div class="twitter">
-					<a class="twitter-timeline" data-height="550" href="https://twitter.com/Dreamgraphisme1">Tweets by Dreamgraphisme1</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-				</div>
-			</div>
-			
+			<!-- Angular formulaire de contact -->
 		</div>
 	</div>
 </div>
 </body>
-<script type="text/javascript" src="jquery-3.1.0.min.js"></script>
-<script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="js/formulaireAngular.js"></script>
 <script type="text/javascript" src="ninjaCv.js"></script>
-<script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="monJs.js"></script>
-<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="style.css">
+
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Candal" rel="stylesheet">
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-<script>(function(d, s, id) {
-	var js, fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) return;
-	js = d.createElement(s); js.id = id;
-	js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.7";
-	fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 </html>

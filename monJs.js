@@ -5,7 +5,7 @@ $(document).ready(function(){
 var saClignote;
 function FaireClignoterImage (){ 
 	$("#clickMe").fadeOut(700).delay(300).fadeIn(600); 
-} 
+}; 
 saClignote = setInterval(FaireClignoterImage,1200); 
 // ---- Anim  presentation ----
 $('#maTete').click(function(){
@@ -34,6 +34,7 @@ $('.partieLogo2').stop().animate({
 			"opacity":1
 		},1000, function(){
 			maFonctionAnimLogo2();
+			maFonctionBackgroundAnilLogo();
 			console.log(maFonctionAnimLogo2);
 		});
 	});
@@ -52,6 +53,14 @@ var maFonctionAnimLogo2 = function(){
 	$( ".animlog10" ).animate({ "bottom": 0 }, 1000);
 
 };
+var maFonctionBackgroundAnilLogo = function(){
+	$('.voletslogo').animate({
+		'background-color': 'rgba(242,74,88,1)'
+	},2000)
+}
+
+
+
 // ---- Hover  Logo Scroll full ancre1 ----
 $('.imgScroll').mouseover(function(){
 	$('.imgScroll').attr('src','images/logoScrollhover.png');
@@ -103,7 +112,7 @@ $('.imgInstructions').click(function(){
 	$('.imgLogoCv').show();
 	$('.imgLogoInstructions').show();
 
-})
+});
 // fonction scroll automatique
 $('a[href^="#"]').click(function(){  
 	var id = $(this).attr("href");
@@ -145,7 +154,7 @@ function type() {
 			setTimeout(type, 50);
 		}
 	}
-}
+};
 var controleScrollConteneurjeu = true;
 $(window).scroll(function() {
 	var top = $('#ancre3').offset().top;
@@ -166,7 +175,7 @@ function animTitreNinjaCv (){
 			$('.titreNinjaCv').animate({'margin-right': '250px'},100);
 			$('.titreNinjaCv').animate({'opacity': 1},1);
 		});
-}
+};
 $('.imgLogoJoue').click(function(){
 	$('.imgLogoInstructions').hide();
 	$('.imgLogoJoue').hide()
@@ -175,7 +184,7 @@ $('.imgLogoJoue').click(function(){
 	$('.titreNinjaCv').hide()
 	$('canvas').show()
 	$('.logoVie').show()
-})
+});
 // Anim Competence
 var controleScrollCompetenceMobile = true;
 $(window).scroll(function() {
@@ -248,34 +257,35 @@ function animCompetences (){
 $('.logofacebook,.txtfacebook').mouseover(function(){
 	$('.logofacebook').css('background','url(images/facebook-hover.png)');
 	$('.txtfacebook').animate({color:'#43619C'},500);
-})
+});
 $('.logofacebook,.txtfacebook').mouseout(function(){
 	$('.logofacebook').css('background','url(images/facebook.png)');
 	$('.txtfacebook').animate({color:'white'},500);
-})
+});
 $('.logotwitter,.txttwitter').mouseover(function(){
 	$('.logotwitter').css('background','url(images/twitter-hover.png)');
 	$('.txttwitter').animate({color:'#24A9E6'},500);
-})
+});
 $('.logotwitter,.txttwitter').mouseout(function(){
 	$('.logotwitter').css('background','url(images/twitter.png)');
 	$('.txttwitter').animate({color:'white'},500);
-})
+});
 $('.logolinkedin,.txtlinkedin').mouseover(function(){
 	$('.logolinkedin').css('background','url(images/linkedin-hover.png)');
 	$('.txtlinkedin').animate({color:'#187FB8'},500);
-})
+});
 $('.logolinkedin,.txtlinkedin').mouseout(function(){
 	$('.logolinkedin').css('background','url(images/linkedin.png)');
 	$('.txtlinkedin').animate({color:'white'},500);
-})
+});
 $('.logopinterest,.txtpinterest').mouseover(function(){
 	$('.logopinterest').css('background','url(images/pinterest-hover.png)');
 	$('.txtpinterest').animate({color:'#cf1813'},500);
-})
+});
 $('.logopinterest,.txtpinterest').mouseout(function(){
 	$('.logopinterest').css('background','url(images/pinterest.png)');
 	$('.txtpinterest').animate({color:'white'},500);
-})
-})
+});
+
+});
 
